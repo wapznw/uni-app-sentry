@@ -2341,6 +2341,11 @@ address@^1.1.2:
   resolved "https://registry.npm.taobao.org/address/download/address-1.1.2.tgz?cache=0&sync_timestamp=1593529661616&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Faddress%2Fdownload%2Faddress-1.1.2.tgz#bf1116c9c758c51b7a933d296b72c221ed9428b6"
   integrity sha1-vxEWycdYxRt6kz0pa3LCIe2UKLY=
 
+adm-zip@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.npm.taobao.org/adm-zip/download/adm-zip-0.5.5.tgz#b6549dbea741e4050309f1bb4d47c47397ce2c4f"
+  integrity sha1-tlSdvqdB5AUDCfG7TUfEc5fOLE8=
+
 after@0.8.2:
   version "0.8.2"
   resolved "https://registry.npm.taobao.org/after/download/after-0.8.2.tgz#fedb394f9f0e02aa9768e702bda23b505fae7e1f"
@@ -7480,11 +7485,6 @@ node-releases@^1.1.71:
   version "1.1.73"
   resolved "https://registry.nlark.com/node-releases/download/node-releases-1.1.73.tgz#dd4e81ddd5277ff846b80b52bb40c49edf7a7b20"
   integrity sha1-3U6B3dUnf/hGuAtSu0DEnt96eyA=
-
-node-stream-zip@^1.13.6:
-  version "1.13.6"
-  resolved "https://registry.nlark.com/node-stream-zip/download/node-stream-zip-1.13.6.tgz#8abdfdbc4bc96ee11e9438d94cc8c93c7df28959"
-  integrity sha1-ir39vEvJbuEelDjZTMjJPH3yiVk=
 
 normalize-package-data@^2.5.0:
   version "2.5.0"

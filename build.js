@@ -1,6 +1,8 @@
 const shellExec = require('shell-exec')
 const glob = require('glob')
 const fs = require('fs')
+const AdmZip = require("adm-zip");
+
 const pkg = require('./src/version.json')
 const YOUR_APPID = process.env.WX_APPID //
 const YOUR_APPID_KEY = process.env.WX_APPID_KEY //
@@ -46,15 +48,16 @@ const unzipSourceMap = async () => {
   if (!fs.existsSync(SOURCE_MAP_PATH)) {
     throw Error('source-map文件未找到')
   }
+  if (SOURCE_MAP_DIR.length > 5) {
+    await shellExec(`rm -rf ${SOURCE_MAP_DIR}`)
+  }
   if (!fs.existsSync(SOURCE_MAP_DIR)) {
     fs.mkdirSync(SOURCE_MAP_DIR, {
       recursive: true
     })
   }
-  if (SOURCE_MAP_DIR.length > 5) {
-    await shellExec(`rm -rf ${SOURCE_MAP_DIR}`)
-  }
-  await shellExec(`extract-zip ${SOURCE_MAP_PATH} ${SOURCE_MAP_DIR}`)
+
+  new AdmZip(SOURCE_MAP_PATH, {}).extractAllTo(SOURCE_MAP_DIR, true)
   const files = glob.sync(`${SOURCE_MAP_DIR}/**/*.*`)
   files.forEach(file => {
     fs.writeFileSync(file.substring(0, file.length - 4), '//# sourceMappingURL=app-service.js.map\n')
