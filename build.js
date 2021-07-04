@@ -7,6 +7,7 @@ const pkg = require('./src/version.json')
 const YOUR_APPID = process.env.WX_APPID //
 const YOUR_APPID_KEY = process.env.WX_APPID_KEY //
 const YOUR_PROJECT = process.env.WX_PROJECT || './dist/build/mp-weixin'
+const WX_ROBOT = process.env.WX_ROBOT || '1'
 const SOURCE_MAP_PATH = './dist/build/mp-weixin-sourcemap.zip'
 const SOURCE_MAP_DIR = './dist/build/sourcemap'
 
@@ -23,13 +24,13 @@ const buildApp = async (command) => {
 
 const uploadApp = async () => {
   console.log('upload app...')
-  let res = await shellExec(`miniprogram-ci upload --pp ${YOUR_PROJECT} --appid ${YOUR_APPID} --pkp ${YOUR_APPID_KEY} --uv ${pkg.version} -r 1`)
+  let res = await shellExec(`miniprogram-ci upload --pp ${YOUR_PROJECT} --appid ${YOUR_APPID} --pkp ${YOUR_APPID_KEY} --uv ${pkg.version} -r ${WX_ROBOT}`)
   if (res.code !== 0) {
     throw new Error(res.stderr)
   }
   console.log(res.stdout);
   console.log('get source-map')
-  res = await shellExec(`miniprogram-ci get-dev-source-map --pp ${YOUR_PROJECT} --appid ${YOUR_APPID} --pkp ${YOUR_APPID_KEY} --uv ${pkg.version} -r 1 --source-map-save-path ${SOURCE_MAP_PATH}`)
+  res = await shellExec(`miniprogram-ci get-dev-source-map --pp ${YOUR_PROJECT} --appid ${YOUR_APPID} --pkp ${YOUR_APPID_KEY} --uv ${pkg.version} -r ${WX_ROBOT} --source-map-save-path ${SOURCE_MAP_PATH}`)
   if (res.code !== 0) {
     throw new Error(res.stderr)
   }
