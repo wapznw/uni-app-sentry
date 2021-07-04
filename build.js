@@ -25,11 +25,13 @@ const uploadApp = async () => {
   if (res.code !== 0) {
     throw new Error(res.stderr)
   }
+  console.log(res.stdout);
   console.log('get source-map')
   res = await shellExec(`miniprogram-ci get-dev-source-map --pp ${YOUR_PROJECT} --appid ${YOUR_APPID} --pkp ${YOUR_APPID_KEY} --uv ${pkg.version} -r 1 --source-map-save-path ${SOURCE_MAP_PATH}`)
   if (res.code !== 0) {
     throw new Error(res.stderr)
   }
+  console.log(res.stdout);
 }
 
 const uploadSourceMap = async (sourcePath) => {
