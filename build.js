@@ -54,7 +54,7 @@ const unzipSourceMap = async () => {
   if (SOURCE_MAP_DIR.length > 5) {
     await shellExec(`rm -rf ${SOURCE_MAP_DIR}`)
   }
-  await shellExec(`extract-zip ${SOURCE_MAP_DIR} ${SOURCE_MAP_PATH}`)
+  await shellExec(`extract-zip ${SOURCE_MAP_PATH} ${SOURCE_MAP_DIR}`)
   const files = glob.sync(`${SOURCE_MAP_DIR}/**/*.*`)
   files.forEach(file => {
     fs.writeFileSync(file.substring(0, file.length - 4), '//# sourceMappingURL=app-service.js.map\n')
