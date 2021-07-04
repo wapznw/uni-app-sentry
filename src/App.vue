@@ -8,7 +8,13 @@
 		},
 		onHide: function() {
 			console.log('App Hide')
-		}
+		},
+    onError (msg) {
+      console.log('App onError', msg.length)
+    },
+    onUnhandledRejection(e){
+      console.info('onUnhandledRejection', e)
+    }
 	}
 </script>
 

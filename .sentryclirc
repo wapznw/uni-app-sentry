@@ -1,0 +1,7 @@
+[defaults]
+url=https://sentry.d.o7r.cn:8443/
+org=sentry
+project=uni-app
+
+[auth]
+token=19fb0c89929b4a88ac00dcb4a9b1c77601c32aeacaf24bd99abbbd2f972057ee

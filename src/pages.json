@@ -5,6 +5,19 @@
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
+		},
+		{
+			"path":"pages/index/about"
+		}
+	],
+	"subPackages": [
+		{
+			"root": "pages/test",
+			"pages": [
+				{
+					"path": "test-index"
+				}
+			]
 		}
 	],
 	"globalStyle": {

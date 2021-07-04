@@ -1,6 +1,6 @@
 {
   "name": "my-uni-project",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "serve": "npm run dev:h5",
@@ -61,6 +61,7 @@
     "core-js": "^3.6.5",
     "flyio": "^0.6.2",
     "regenerator-runtime": "^0.12.1",
+    "sentry-miniapp2": "^0.11.3",
     "vue": "^2.6.11",
     "vuex": "^3.2.0"
   },
@@ -76,14 +77,18 @@
     "@dcloudio/vue-cli-plugin-uni-optimize": "^2.0.0-31920210609001",
     "@dcloudio/webpack-uni-mp-loader": "^2.0.0-31920210609001",
     "@dcloudio/webpack-uni-pages-loader": "^2.0.0-31920210609001",
+    "@sentry/webpack-plugin": "^1.15.1",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-plugin-import": "^1.11.0",
     "cross-env": "^7.0.2",
+    "glob": "^7.1.7",
     "jest": "^25.4.0",
     "mini-types": "*",
     "miniprogram-api-typings": "*",
+    "node-stream-zip": "^1.13.6",
     "postcss-comment": "^2.0.0",
+    "shell-exec": "^1.0.2",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [
