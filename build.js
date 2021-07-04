@@ -76,7 +76,7 @@ async function build(){
   try {
     pkg.version = process.env.RELEASE_VERSION || '1.0.0'
     fs.writeFileSync('./src/version.json', JSON.stringify(pkg))
-    await buildApp('yarn build:mp-weixin')
+    await buildApp(`yarn build:mp-weixin ${process.argv.slice(2).join(' ')}`)
     await uploadApp()
     await unzipSourceMap()
   } catch (e) {
